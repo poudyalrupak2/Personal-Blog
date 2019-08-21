@@ -1,42 +1,181 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!doctype html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
+
+
+    <link rel="stylesheet" href="~/Content/breed/galary/vendors/jquery-ui-1.11.4/jquery-ui.css">
+    <link rel="stylesheet" href="/Content/breed/css/bootstrap.css">
+    <link rel="stylesheet" href="/Content/breed/vendors/linericon/style.css">
+    <link rel="stylesheet" href="/Content/breed/css/themify-icons.css">
+    <link rel="stylesheet" href="/Content/breed/vendors/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/Content/breed/vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/Content/breed/vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="/Content/breed/vendors/nice-select/css/nice-select.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="/Content/breed/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100i,300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">
+
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+
+    <link rel="stylesheet" href="/Content/breed/css/style1.css">
+    <style>
+        .nav > li > a:hover, .nav > li > a:focus {
+            text-decoration: none;
+            background-color: #fff;
+        }
+
+        .blog .carousel-indicators {
+            left: 0;
+            top: auto;
+            bottom: -40px;
+        }
+
+            /* The colour of the indicators */
+            .blog .carousel-indicators li {
+                background: #a3a3a3;
+                border-radius: 50%;
+                width: 8px;
+                height: 8px;
+            }
+
+            .blog .carousel-indicators .active {
+                background: #707070;
+            }
+
+        .navbar-brand {
+            height: auto;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+
+    <!--================ Start Header Area =================-->
+    <header class="header_area navbar_fixed">
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <a class="navbar-brand logo_h" href="#"><img src="/img/220px-Nepal_Sports_Council_Logo.jpg" style="height:70px;margin-top:-20px" alt=""></a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        @*<div class="text-center" style="width:100%;margin-bottom:-30px;">
+            <img src="~/img/slogan.png" />
+
+        </div>*@
+                        
+                        <div>
+                            <ul class="nav navbar-nav menu_nav">
+                                <li class="nav-item active"><a class="nav-link" href="@Url.Action("Index","Home")">Home</a></li>
+                                <li class="nav-item submenu dropdown">
+
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                                       aria-expanded="false">Activities</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="@Url.Action("Index","About")">News</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="@Url.Action("Index","Blog")">Event</a>
+                                        </li>
+
+                                    </ul>
+
+
+
+
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="@Url.Action("Gallery","home")">Gallery</a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("Index","Portfolio")">SportNews</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("SagNews","Portfolio")">SAG Special</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="@Url.Action("contact","home")">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+
+                        <img src="~/img/visit-logo_200XWidth.png" style="height:90px;margin-top:-20px;" />
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    @RenderBody();
+    <footer class="footer_area">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="footer_top flex-column">
+                        <div class="footer_logo">
+
+                            <div class="d-lg-block d-none">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+            <div class="row footer_bottom justify-content-center">
+                <p class="col-lg-8 col-sm-12 footer-text" style="color:white">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | Developed by dibugsoft
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    </footer>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <script src="/content/photograph/js/jquery-3.3.1.min.js"></script>
+
+    <script src="/Content/breed/js/bootstrap.min.js"></script>
+    <script src="/Content/breed/js/popper.js"></script>
+    <script src="/Content/breed/js/stellar.js"></script>
+    <script src="/Content/breed/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+    <script src="/Content/breed/vendors/isotope/isotope-min.js"></script>
+    <script src="/Content/breed/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/Content/breed/js/jquery.ajaxchimp.min.js"></script>
+    <script src="/Content/breed/js/mail-script.js"></script>
+    <!--gmaps Js-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+    <script src="/Content/breed/js/gmaps.min.js"></script>
+    <script src="/Content/breed/js/theme.js"></script>
+    <script>
+
+        $('#blogCarousel').carousel({
+            interval: 5000
+        });
+        var url = window.location;
+        var element = $('ul.menu a').filter(function () {
+            $('ul.menu a').parent().removeClass('current');
+            return this.href == url;
+        }).parent().addClass('current');
+
+    </script>
+    @RenderSection("scripts", false)
+    @RenderSection("style", false)
+
+
 </body>
+
 </html>

@@ -1,0 +1,162 @@
+﻿
+@model PersonalBlog.Areas.Admin.Models.Gallery
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Photon &mdash; Colorlib Website Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300i,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="/content/photograph/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/content/Photograph/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/content/photograph/css/magnific-popup.css">
+    <link rel="stylesheet" href="/content/photograph/css/jquery-ui.css">
+    <link rel="stylesheet" href="/content/photograph/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/content/photograph/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/content/photograph/css/lightgallery.min.css">
+
+    <link rel="stylesheet" href="/content/photograph/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/content/photograph/fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="/content/photograph/css/swiper.css">
+    <link rel="stylesheet" href="/content/photograph/css/aos.css">
+    <link rel="stylesheet" href="/content/photograph/css/style.css">
+
+</head>
+<body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class="site-section" data-aos="fade" style="min-height:600px;">
+        <div class="container-fluid">
+
+            <div class="row justify-content-center">
+
+                <div class="col-md-7">
+                    <div class="row mb-5">
+                        <div class="col-12 ">
+                            <h2 class="site-section-heading text-center">@Model.Caption</h2>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row" id="lightgallery">
+                @{ int i = 0; }
+                @foreach (var image in Model.Images)
+                {
+                    <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade" data-src="@image.FilePath" data-sub-html="<p>@Model.Name</p>">
+                        <a href="#"><img src="@image.FilePath" alt="IMage" class="img-fluid"></a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    @section Scripts{
+        
+
+
+    <script src="/content/photograph/js/jquery-3.3.1.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+    <script src="/content/photograph/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/content/photograph/js/jquery-ui.js"></script>
+    <script src="/content/photograph/js/popper.min.js"></script>
+    <script src="/content/photograph/js/bootstrap.min.js"></script>
+    <script src="/content/photograph/js/owl.carousel.min.js"></script>
+    <script src="/content/photograph/js/jquery.stellar.min.js"></script>
+    <script src="/content/photograph/js/jquery.countdown.min.js"></script>
+    <script src="/content/photograph/js/jquery.magnific-popup.min.js"></script>
+    <script src="/content/photograph/js/bootstrap-datepicker.min.js"></script>
+    <script src="/content/photograph/js/swiper.min.js"></script>
+    <script src="/content/photograph/js/aos.js"></script>
+    <script src="/content/photograph/js/picturefill.min.js"></script>
+
+    <script src="/content/photograph/js/jquery.mousewheel.min.js"></script>
+    <script src="/content/photograph/js/main.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#lightgallery').lightGallery();
+        });
+    </script>
+        }
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="cbp-panel">
+        <div id="js-grid-mosaic" class="cbp">
+            @{ int i = 0; }
+            @foreach (var image in Model.Images)
+            {
+
+                <div class="cbp-item print motion" style="width: 300px; left: 337px; top: 0px;">
+                    <a class="cbp-caption fancybox-media" data-rel="portfolio" href="@image.FilePath" data-title-id='title-i'>
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="@image.FilePath" alt="" height="170" width="170" />
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignCenter">
+                                <div class="cbp-l-caption-body">
+                                    <div class="cbp-l-caption-title"><span class="cbp-plus"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/.cbp-caption-activeWrap -->
+                    </a>
+                    <div id='title-i' class="hidden">
+                        <h3>@image.Gallery.Caption</h3>
+                    </div>
+                    <!-- /.hidden -->
+                </div>
+
+
+                i++;
+            }
+            <!--/.cbp-item -->
+
+
+        </div>
+    </div>*@

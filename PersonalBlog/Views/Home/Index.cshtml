@@ -1,31 +1,618 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿@model PersonalBlog.Models.ViewModel.IndexViewModel
+<script src="/content/js/jssor.slider-27.5.0.min.js" type="text/javascript"></script>
+<script src="~/Content/Breed/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        var jssor_1_SlideshowTransitions = [
+            { $Duration: 800, x: -0.3, $During: { $Left: [0.3, 0.7] }, $Easing: { $Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+            { $Duration: 800, x: 0.3, $SlideOut: true, $Easing: { $Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 }
+        ];
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+        var jssor_1_options = {
+            $AutoPlay: 1,
+            $SlideshowOptions: {
+                $Class: $JssorSlideshowRunner$,
+                $Transitions: jssor_1_SlideshowTransitions,
+                $TransitionsOrder: 1
+            },
+            $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+            },
+            $ThumbnailNavigatorOptions: {
+                $Class: $JssorThumbnailNavigator$,
+                $Orientation: 2,
+                $NoDrag: true
+            }
+        };
 
+        var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+        /*#region responsive code begin*/
+
+        var MAX_WIDTH = 1349;
+
+        function ScaleSlider() {
+            var containerElement = jssor_1_slider.$Elmt.parentNode;
+            var containerWidth = containerElement.clientWidth;
+
+            if (containerWidth) {
+
+                //        var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+                var expectedWidth = containerWidth;// Math.min(MAX_WIDTH || containerWidth, containerWidth);
+                jssor_1_slider.$ScaleWidth(expectedWidth);
+            }
+            else {
+                window.setTimeout(ScaleSlider, 30);
+            }
+        }
+
+        ScaleSlider();
+
+        $(window).bind("load", ScaleSlider);
+        $(window).bind("resize", ScaleSlider);
+        $(window).bind("orientationchange", ScaleSlider);
+        /*#endregion responsive code end*/
+    });
+</script>
+<style>
+    /*jssor slider loading skin spin css*/
+    .jssorl-009-spin img {
+        animation-name: jssorl-009-spin;
+        animation-duration: 1.6s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    @@keyframes jssorl-009-spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .jssora061 {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+    }
+
+        .jssora061 .a {
+            fill: none;
+            stroke: #fff;
+            stroke-width: 360;
+            stroke-linecap: round;
+        }
+
+        .jssora061:hover {
+            opacity: .8;
+        }
+
+        .jssora061.jssora061dn {
+            opacity: .5;
+        }
+
+        .jssora061.jssora061ds {
+            opacity: .3;
+            pointer-events: none;
+        }
+
+    div.banner_inner {
+        min-height: 0px;
+    }
+</style>
+<br />
+<br />
+<br />
+<br />
+<section class="home_banner_area">
+    <div class="banner_inner">
+        <div class="container-fluid" style="margin-left:-15px;">
+
+            <div id="jssor_1" style="position:relative;margin:0 auto;top:10px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
+                <!-- Loading Screen -->
+                <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+                    <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="/img/spin.svg" />
+                </div>
+                <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
+                    <div>
+                        <img data-u="image" src="/img/045.jpg" />
+                        <div u="thumb">Slide Description 001</div>
+                    </div>
+                    <div>
+                        <img data-u="image" src="/img/043.jpg" />
+                        <div u="thumb">Slide Description 002</div>
+                    </div>
+                    <div>
+                        <img data-u="image" src="/img/046.jpg" />
+                        <div u="thumb">Slide Description 003</div>
+                    </div>
+                    <div>
+                        <img data-u="image" src="/img/047.jpg" />
+                        <div u="thumb">Slide Description 004</div>
+                    </div>
+                    <div>
+                        <img data-u="image" src="/img/048.jpg" />
+                        <div u="thumb">Slide Description 005</div>
+                    </div>
+                    <div>
+                        <img data-u="image" src="/img/044.jpg" />
+                        <div u="thumb">Slide Description 006</div>
+                    </div>
+                    <div>
+                        <img data-u="image" src="/img/050.jpg" />
+                        <div u="thumb">Slide Description 007</div>
+                    </div>
+                    <div>
+                        <img data-u="image" src="/img/049.jpg" />
+                        <div u="thumb">Slide Description 008</div>
+                    </div>
+                    <div>
+                        <img data-u="image" src="/img/052.jpg" />
+                        <div u="thumb">Slide Description 009</div>
+                    </div>
+                    <div>
+                        <img data-u="image" src="/img/051.jpg" />
+                        <div u="thumb">Slide Description 010</div>
+                    </div>
+                </div>
+                <!-- Thumbnail Navigator -->
+                <div u="thumbnavigator" style="position:absolute;bottom:0px;left:0px;width:980px;height:50px;color:#FFF;overflow:hidden;cursor:default;background-color:rgba(0,0,0,.5);">
+                    <div u="slides">
+                        <div u="prototype" style="position:absolute;top:0;left:0;width:980px;height:50px;">
+                            <div u="thumbnailtemplate" style="position:absolute;top:0;left:0;width:100%;height:100%;font-family:arial,helvetica,verdana;font-weight:normal;line-height:50px;font-size:16px;padding-left:10px;box-sizing:border-box;"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Arrow Navigator -->
+                <div data-u="arrowleft" class="jssora061" style="        width: 55px;
+        height: 55px;
+        top: 0px;
+        left: 25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                    <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        <path class="a" d="M11949,1919L5964.9,7771.7c-127.9,125.5-127.9,329.1,0,454.9L11949,14079"></path>
+                    </svg>
+                </div>
+                <div data-u="arrowright" class="jssora061" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                    <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        <path class="a" d="M5869,1919l5984.1,5852.7c127.9,125.5,127.9,329.1,0,454.9L5869,14079"></path>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<br/>
+<br />
+<section class="services_area" style="padding-bottom:20px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main_title">
+                    <h2>
+                        News
+                        And Events
+                    </h2>
+                </div>
+            </div>
+        </div>
+        @{
+            /**/
+
+            int j = 0;
+        }
+        @foreach (var item in Model.news)
+        {
+            if (j % 2 == 0)
+            {
+                <div class="clearfix">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <center><h1 style="font-size: 3rem;font-weight: 700;">@item.Title</h1></center>
+
+                        </div>
+
+
+
+                        <div class="col-md-10">
+                            <p style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:4;padding: 10px 100px 0;min-height:150px">
+                                @item.shortDetail
+
+                            </p>
+                            <center> <a href="@Url.Action("NDetails","Home",new {id = item.Id })"  class="btn-sm btn-info">Read More</a></center>
+                        </div>
+                        <div class="col-md-2 ">
+                            @if (item.Image != "" && item.Image!=null)
+                            {
+                              
+                                <img src="@item.Image" alt="" width="170" height="170" style="float:right;">
+                            }
+                            else
+                            {
+                                <img src="/news/noimg.png" alt="" style="height:77px;width:70px;">
+
+                            }
+
+                        </div>
+                    </div>
+                </div>
+
+            }
+            if (j % 2 == 1)
+            {
+                <div class="clearfix">
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <center><h1 style="font-size: 3rem;font-weight: 700;">@item.Title</h1></center>
+                        </div>
+                        <div class="col-md-2">
+                            @if (item.Image != "" && item.Image != null)
+                            {
+
+                                <img src="@item.Image" alt="" width="170" height="170" style="float:right;">
+                            }
+                            else
+                            {
+                                <img src="/news/noimg.png" alt="" style="height:77px;width:70px;">
+
+                            }
+                        </div>
+                        <div class="col-md-10">
+
+
+                            <p style="overflow:hidden;text-overflow: ellipsis;display:-webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:4;padding: 10px 100px 0;min-height:150px">
+                                @item.shortDetail
+
+                            </p>
+                            <center> <a href="@Url.Action("NDetails","Home",new { id = item.Id })" class="btn-sm btn-info">Read More</a></center>
+                        </div>
+                    </div>
+                </div>
+            }
+            j++;
+        }
+    </div>
+</section>
+<section class="services_area" style="padding-bottom:20px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main_title">
+                    <h2>
+                      Sports News
+                    </h2>
+                </div>
+            </div>
+        </div>
+        @{
+            /**/
+
+            int k= 0;
+        }
+        @foreach (var item in Model.SportNews)
+        {
+            if (k % 2 == 0)
+            {
+                <div class="clearfix">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <center><h1 style="font-size: 3rem;font-weight: 700;">@item.Title</h1></center>
+
+                        </div>
+
+
+
+                        <div class="col-md-10">
+                            <p style="overflow:hidden;text-overflow: ellipsis;display:-webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:4;padding: 10px 100px 0;min-height:150px">
+                                @item.shortDetail
+
+                            </p>
+                            <center> <a href="@Url.Action("NDetails","Home",new { id = item.Id })" class="btn-sm btn-info">Read More</a></center>
+                        </div>
+                        <div class="col-md-2 ">
+                            <img class="img2" src="@item.Image" width="170" height="170" style="float:right;">
+                        </div>
+                    </div>
+                </div>
+
+            }
+            if (k % 2 == 1)
+            {
+                <div class="clearfix">
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <center><h1 style="font-size: 3rem;font-weight: 700;">@item.Title</h1></center>
+                        </div>
+                        <div class="col-md-2">
+                            <img class="img2" src="@item.Image" alt="Pineapple" width="170" height="170" style="float:left;">
+                        </div>
+                        <div class="col-md-10">
+
+
+                            <p>
+                            <p style="overflow:hidden;text-overflow: ellipsis;display:-webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:4;padding: 10px 100px 0;min-height:150px">
+                                @item.shortDetail
+
+                            </p>
+                            <center><a href="@Url.Action("NDetails","Home",new {id = item.Id })" class="btn-sm btn-info">Read More</a></center>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+            k++;
+        }
+    </div>
+</section>
+
+<!--================ End About Us Area =================-->
+<!--================ Start Features Area =================-->
+<!--================ End Features Area =================-->
+
+<section class="services_area" style="padding-bottom:20px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main_title">
+                    <h2>
+                        My History
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!---start of history area-->
+<section class="timeline">
+    <div class="container">
+        @{
+            int i = 0;
+        }
+
+        @foreach (var item in Model.histories)
+        {
+            <div class="timeline-item">
+                <div class="timeline-img"></div>
+                @if (i % 2 == 0)
+                {
+                    <div class="timeline-content js--fadeInLeft">
+
+
+                        <center>
+
+                            @if (item.Image != null && item.Image != null)
+                            {
+                                <img class="rounded-circle" src="@item.Image" alt="Pineapple" width="50" height="50">
+
+                            }
+                            else
+                            {
+                                <img class="rounded-circle" src="/news/noimg.png" alt="Pineapple" width="50" height="50" >
+
+                            }
+
+                        </center>
+                        <h2>Title</h2>
+                        <div class="date">@item.Date</div>
+                        <p style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:3;">@item.Description</p>
+                        <a class="bnt-more" href="@Url.Action("detail","Home",new {id=item.Id })">More</a>
+                    </div>
+                }
+
+                else
+                {
+                    <div class="timeline-content timeline-card js--fadeInRight">
+
+
+                        <center><img class="rounded-circle" src="@item.Image" alt="Pineapple" width="50" height="50"></center>
+                        <h2>Title</h2>
+                        <div class="date">@item.Date</div>
+                        <p style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical; -webkit-line-clamp:3;">@item.Description</p>
+                        <a class="bnt-more" href="@Url.Action("detail","Home",new {id=item.Id })">More</a>
+                    </div>
+                }
+
+            </div>
+            i++;
+        }
+
+
+
+        @*<div class="timeline-item">
+
+                <div class="timeline-img"></div>
+
+                <div class="timeline-content js--fadeInLeft">
+                    <div class="date">3 JUN 2016</div>
+                    <h2>Quote</h2>
+                    <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta explicabo debitis omnis dolor iste fugit totam quasi inventore!</blockquote>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-img"></div>
+
+                <div class="timeline-content js--fadeInRight">
+                    <h2>Title</h2>
+                    <div class="date">22 JUN 2016</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
+                    <a class="bnt-more" href="javascript:void(0)">More</a>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-img"></div>
+
+                <div class="timeline-content timeline-card js--fadeInLeft">
+                    <div class="timeline-img-header">
+                        <h2>Card Title</h2>
+                    </div>
+                    <div class="date">10 JULY 2016</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
+                    <a class="bnt-more" href="javascript:void(0)">More</a>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-img"></div>
+
+                <div class="timeline-content timeline-card js--fadeInRight">
+                    <div class="timeline-img-header">
+                        <h2>Card Title</h2>
+                    </div>
+                    <div class="date">30 JULY 2016</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
+                    <a class="bnt-more" href="javascript:void(0)">More</a>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-img"></div>
+
+                <div class="timeline-content js--fadeInLeft">
+                    <div class="date">5 AUG 2016</div>
+                    <h2>Quote</h2>
+                    <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta explicabo debitis omnis dolor iste fugit totam quasi inventore!</blockquote>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-img"></div>
+
+                <div class="timeline-content timeline-card js--fadeInRight">
+                    <div class="timeline-img-header">
+                        <h2>Card Title</h2>
+                    </div>
+                    <div class="date">19 AUG 2016</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
+                    <a class="bnt-more" href="javascript:void(0)">More</a>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-img"></div>
+
+                <div class="timeline-content js--fadeInLeft">
+                    <div class="date">1 SEP 2016</div>
+                    <h2>Title</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
+                    <a class="bnt-more" href="javascript:void(0)">More</a>
+                </div>
+            </div>*@
+
+
+
+    </div>
+</section>
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <div class="col-md-8">
+<section class="services_area" style="padding-top:20px;">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main_title">
+                    <h2>
+                        My
+                        Achievement And Award
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row blog">
+            <div class="col-md-12">
+                <div id="blogCarousel" class="carousel slide">
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#blogCarousel" data-slide-to="1"></li>
+                    </ol>
+
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item active">
+
+
+
+
+
+                            <div class="row">
+
+                                @foreach (var item in Model.Acheivement)
+                                {
+                                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                        <div class="service_item">
+                                            @if (item.Image != "" && item.Image != null)
+                                            {
+                                                <img src="@item.Image" alt="" style="height:77px;width:70px;">
+                                            }
+                                            else
+                                            {
+                                                <img src="/news/noimg.png" alt="" style="height:77px;width:70px;">
+                                                
+                                            }
+                                            <h4>@item.Title</h4>
+
+                                           
+                                        </div>
+                                    </div>
+                                }
+
+
+                               
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+</section>
+<section class="portfolio_area" id="portfolio" style="padding-bottom:20px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main_title">
+                    <h2>
+                        Check Our Gallery <br>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model.galleries)
+            {
+
+                <div class="col-md-3 all latest popular upcoming">
+                    <div class="single_portfolio">
+                        <a href="gallery1.html">	<img class="img-fluid w-100" src="@item.Imagepath" style="height:275px;width:525px;"></a>
+                        <div class="overlay"></div>
+                        <div class="short_info">
+                            <h4><a href="@Url.Action("Details","Home",new {id=item.Id })">@item.Caption</a></h4>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+</section>
+</div>
+    <div class="col-md-3" style="padding-top:100px;margin-right:10px;padding-right:20px;">
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FPitamberTimsina.info.np%2F&tabs=timeline&width=340&height=800&small_header=false&adapt_container_width=false&hide_cover=true&show_facepile=true&appId=342183715959961" width="340" height="800 " style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+
     </div>
 </div>

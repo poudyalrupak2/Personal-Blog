@@ -1,0 +1,86 @@
+﻿@{
+    Layout = "/Views/shared/_layout.cshtml";
+}
+@model IEnumerable<PersonalBlog.Areas.Admin.Models.News>
+<section class="services_area" style="min-height:700px">
+    <div class="container">
+
+        @*@{
+            /**/
+
+            int k = 0;
+        }*@
+        @foreach (var item in Model)
+        {
+
+            //if (k % 2 == 0)
+            //{
+                <div class="clearfix" style="margin-top:100px">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <center><a href="@Url.Action("NDetails", "Home", new { id = item.Id })"><h1 style="font-size: 3rem;font-weight: 700;padding-left:20px">@item.Title</h1></a></center>
+
+                            <br />
+                        </div>
+
+
+
+                        <div class="col-md-10">
+                            <center>
+                                <p style="overflow:hidden;text-overflow: ellipsis;display:-webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:4;padding-left:20px">
+                                    @item.shortDetail
+
+                                </p>
+                            </center>
+
+                        </div>
+
+                    </div>
+                </div>
+        }
+            @foreach (var item in Model)
+            {
+                //if (k % 2 == 0)
+                //{
+                <div class="clearfix" style="margin-top:100px">
+                    <div class="row">
+                        <div class="col-md-3">
+
+                            <center><a href="@Url.Action("NDetails", "Home", new { id = item.Id })"><h1 style="font-size: 3rem;font-weight: 700;padding-left:20px">@item.Title</h1></a></center>
+
+                            <br />
+                        </div>
+
+
+                    </div>
+                </div>
+            }
+            @*}*@ @*}*@ @*}*@
+            @*if (k % 2 == 1)
+                {
+                    <div class="clearfix">
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <center><a href="@Url.Action("NDetails","Home",new {id = item.Id })" ><h1 style="font-size: 3rem;font-weight: 700;">@item.Title</h1></a></center>
+
+                                <br />
+                            </div>
+
+                            <div class="col-md-10">
+
+
+                                <center>
+                                    <p style="overflow:hidden;text-overflow: ellipsis;display:-webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:4;">
+                                        @item.shortDetail
+
+                                    </p>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                }
+                k++;
+            }*@
+        </div>
+</section>

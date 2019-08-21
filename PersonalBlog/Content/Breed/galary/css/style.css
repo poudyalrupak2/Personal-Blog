@@ -1,0 +1,296 @@
+/***************************************************************************************************************
+||||||||||||||||||||||||||||       MASTER STYLESHEET FOR RESORT       ||||||||||||||||||||||||||||||||||||
+****************************************************************************************************************
+||||||||||||||||||||||||||||              TABLE OF CONTENT                  ||||||||||||||||||||||||||||||||||||
+****************************************************************************************************************
+****************************************************************************************************************
+
+1 Imported styles
+2 Global styles
+3 header top styles
+4 header top right section
+5 Home two main menu
+6 Stricky header Styles
+7 hidden bar Styles
+8 banner styles
+9 Search styles
+10 Welcome to Lake Resort styles
+11 Rooms And Suits styles
+12 Know About Us styles
+13 Our Resort Values styles
+14 satisfied with the Resort styles
+15 Testimonials styles
+16 News and Events styles
+17 Green Band ads style
+18 footer style
+19 Top right search field Styles
+20 Top right Search results Styles
+21 Inner page - about us
+22 accrodion - about us
+23 Take a tour video - about us
+24 Room1 style
+25 Room2 style
+26 News page styles
+27 News Details Comments
+28 gallery filter Styles
+29 image-gallery Styles
+30 pop up single gallery item Styles
+31 Booking Styles 
+32 Single room Styles
+33 Home Two Styles
+34 Home Two main menu Styles
+35 Home Two banner Styles
+36 Search Home Two Styles
+37 Counter Home Two Styles
+38 Activities of Resort Home Two Styles
+39 Our Offers Home Two Styles
+40 Our Gallery Home Two Styles
+41 Testimonials & Our Events Home Two Styles
+42 Get in Touch & Drop a Message Home Two Styles
+43 Rooms And Suits Home Two Styles
+44 Rooms Amenities Styles
+45 Resort Activities Styles
+46 Offers & Deals Styles
+47 Family Fun Styles
+48 hidden-bar Home Two Styles
+49 tracking styles
+50 our Restaurant Styles
+
+
+****************************************************************************************************************
+||||||||||||||||||||||||||||            End TABLE OF CONTENT                ||||||||||||||||||||||||||||||||||||
+****************************************************************************************************************/
+/* ==============================
+   1 Imported styles
+   ============================== */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,800,700,900);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+@import url(https://fonts.googleapis.com/css?family=Playball&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:400italic,400);
+@import url("jquery.mCustomScrollbar.min.css");
+@import url("zebra-datepicker/default.css");
+/*change css file name to change date picker style */
+@import url("jquery.bxslider.css");
+@import url("strock-icon.css");
+@import url("jquery.fancybox.css");
+/* ==============================
+   2 Global styles
+   ============================== */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,800,700,900);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+@import url(https://fonts.googleapis.com/css?family=Playball&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:400italic,400);
+@import 'https://fonts.googleapis.com/css?family=Alegreya:400,400i,700,700i,900,900i';
+@import url("jquery.mCustomScrollbar.min.css");
+@import url("animate.min.css");
+@import url("zebra-datepicker/default.css");
+@import url("jquery.bxslider.css");
+@import url("strock-icon.css");
+@import url("jquery.fancybox.css");
+
+#single-gallery-modal .modal-dialog img {
+  max-width: 100%;
+}
+
+#single-gallery-modal .modal-dialog .modal-header {
+  background: #85ab00;
+  padding: 19px 0;
+  position: relative;
+}
+
+#single-gallery-modal .modal-dialog .modal-header .close {
+  position: absolute;
+  right: 40px;
+  top: 18px;
+  line-height: 32px;
+  color: #000000;
+  width: 32px;
+  height: 32px;
+  background: white;
+  opacity: 1;
+  border-radius: 50%;
+  margin: 0;
+  z-index: 9999999;
+  text-indent: 1px;
+}
+
+#single-gallery-modal .modal-dialog .modal-header h4 {
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+#single-gallery-modal .modal-dialog .modal-body {
+  padding: 40px;
+}
+
+#single-gallery-modal .modal-dialog .modal-body p {
+  font-size: 15px;
+  color: #797979;
+  line-height: 26px;
+}
+
+#single-gallery-modal .modal-dialog .modal-body ul li {
+  font-size: 13px;
+  color: #2B2B2B;
+  font-weight: 600;
+  line-height: 35px;
+  text-transform: uppercase;
+}
+
+#single-gallery-modal .modal-dialog .modal-body ul li i {
+  font-size: 13px;
+  color: #EB9500;
+  margin-right: 10px;
+}
+.image-gallery {
+  position: relative;
+}
+
+.image-gallery .single-gallery {
+  padding: 0 15px;
+  margin-bottom: 30px;
+  float: left;
+  box-sizing: border-box;
+}
+
+.image-gallery .single-r-gallery {
+  padding: 0 15px;
+  margin-bottom: 30px;
+  float: right;
+  box-sizing: border-box;
+}
+
+.image-gallery .single-gallery.mix {
+  display: none;
+}
+
+.image-gallery .single-gallery.span-8 {
+  width: 66.66666667%;
+}
+
+.image-gallery .single-gallery.span-6 {
+  width: 50%;
+}
+
+.image-gallery .single-gallery.span-4 {
+  width: 33.33333333%;
+}
+
+.image-gallery .single-gallery.span-3 {
+  width: 25%;
+}
+
+.single-gallery:hover .img-holder img {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.single-gallery .img-holder {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.single-gallery .img-holder img {
+  -webkit-transform: scale();
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.single-gallery .img-holder .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+.single-gallery:hover .img-holder .content .link-gallery {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.single-gallery .img-holder .content .link-gallery {
+  display: table-cell;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: rgba(133, 171, 0, 0.9);
+  opacity: 0;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  border: 1px dashed rgba(236, 236, 236, 0.5);
+}
+
+.single-gallery .img-holder .content .link-gallery .media-right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.single-gallery .img-holder .content .link-gallery .media-bottom {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.single-gallery .img-holder .content .link-gallery a {
+  color: #fff;
+  font: 2.43em/1em "Playball", sans-serif;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.single-gallery .modal-content {
+  display: none;
+}
+.anim-3,
+.anim-3-all * {
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.anim-5,
+.anim-5-all * {
+  transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+
+.anim-7,
+.anim-7-all * {
+  transition: all 0.7s ease;
+  -moz-transition: all 0.7s ease;
+  -webkit-transition: all 0.7s ease;
+  -ms-transition: all 0.7s ease;
+  -o-transition: all 0.7s ease;
+}
+
+
+
+
+
+
+

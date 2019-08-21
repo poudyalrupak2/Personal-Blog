@@ -1,17 +1,74 @@
 ﻿@{
     ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<style>
+    input[type=text], select, textarea {
+        width: 100%; /* Full width */
+        padding: 12px; /* Some padding */
+        border: 1px solid #ccc; /* Gray border */
+        border-radius: 4px; /* Rounded borders */
+        box-sizing: border-box; /* Make sure that padding and width stays in place */
+        margin-top: 6px; /* Add a top margin */
+        margin-bottom: 16px; /* Bottom margin */
+        resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+    }
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+    /* Style the submit button with a specific background color etc */
+    input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+        /* When moving the mouse over the submit button, add a darker green color */
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+    /* Add a background color and some padding around the form */
+
+</style>
+
+<section class="services_area">
+    <div class="container">
+        @using (Html.BeginForm("Contact", "Home", FormMethod.Post))
+        { 
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+           
+
+            <label for="fname">Full Name</label>
+            <input type="text" id="fname" name="fname" placeholder="Your name..">
+
+            <label for="lname">Emai</label>
+            <input type="text" id="lname" name="Email" placeholder="Your Email">
+
+            <label for="country">State</label>
+            <select id="country" name="country">
+                <option value="">Select State</option>
+                <option value="State1">State1</option>
+                <option value="State 2">State 2</option>
+                <option value="State 3">State 3</option>
+                <option value="State4">State 4</option>
+                <option value="State 5">State 5</option>
+                <option value="State 6">State 6</option>
+                <option value="State 7">State 7</option>
+
+            </select>
+
+            <label for="Reason">Reason</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+            <input type="submit" value="Submit">
+
+      }
+    </div>
+</section>

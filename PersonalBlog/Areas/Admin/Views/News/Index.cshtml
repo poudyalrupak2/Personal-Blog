@@ -1,0 +1,120 @@
+﻿@model IEnumerable<PersonalBlog.Areas.Admin.Models.News>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table" id="mytable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.PublishingDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+
+                <td>
+                    @item.PublishingDate.ToString("dd/MM/yyyy")
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts {
+    <link rel=" stylesheet" href="~/Content/DataTables/css/jquery.dataTables.yadcf.css" />
+
+    <link href="~/Content/DataTables/css/jquery.dataTables.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/datatables/jquery.dataTables.js"></script>
+    <script src="~/Scripts/datatables/dataTables.bootstrap.js">
+    </script>
+
+    <script src="~/Scripts/datatables/bootstrap3-typeahead.js"></script>
+
+    <script src="~/Scripts/datatables/jquery.dataTables.js"></script>
+    <script src="~/Content/DataTables/css/jquery.dataTables.yadcf.js"></script>
+    <link rel=" stylesheet" href="~/Content/DataTables/css/jquery.dataTables.yadcf.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="~/Content/DataTables/css/jquery.dataTables.css" />
+    <link rel="stylesheet" href="~/Content/DataTables/css/dataTables.bootstrap.css" />
+
+
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="~/Scripts/datatables/jquery.dataTables.js"></script>
+    <script src="~/Scripts/datatables/dataTables.bootstrap.js">
+    </script>
+    <script src="~/Scripts/datatables/bootstrap3-typeahead.js"></script>
+    <script type="text/javascript">
+
+                        $(document).ready(function () {
+                            var dataSrc = [];
+
+                            $("#mytable").DataTable({
+                                "columnDefs": [
+                                    {
+                                        "orderable": false, "targets": [2],
+
+
+                                    }
+                                ],
+
+                                "pageLength": 50,
+                                "bInfo": false,
+                                "dom": "Bfrtp",
+                                "language": {
+                                    "search": "Filter :"
+                                },
+
+                                'initComplete': function () {
+                                    var api = this.api();
+
+                                    // Populate a dataset for autocomplete functionality
+                                    // using data from first, second and third columns
+                                    api.cells('tr', [0, 1]).every(function () {
+                                        // Get cell data as plain text
+                                        var data = $('<div>').html(this.data()).text();
+                                        if (dataSrc.indexOf(data) === -1) { dataSrc.push(data); }
+                                    });
+
+                                    // Sort dataset alphabetically
+                                    dataSrc.sort();
+
+                                    // Initialize Typeahead plug-in
+                                    $('.dataTables_filter input[type="search"]}', api.table().container())
+                                        .typeahead({
+                                            source: dataSrc,
+                                            afterSelect: function (value) {
+                                                api.search(value).draw();
+                                            }
+                                        }
+                                        );
+                                }
+                            });
+                        });
+    </script>
+}

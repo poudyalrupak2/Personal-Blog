@@ -1,0 +1,21 @@
+﻿@model PersonalBlog.Areas.Admin.Models.News
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br/>
+<br />
+<br/>
+<section class="services_area">
+    <div class="container">
+
+        <center>
+            <h1>@Model.Title</h1>
+        </center>
+        <p>
+            @Html.Raw(Model.LongDescription)
+        </p>
+        </div>>
+
+</section>

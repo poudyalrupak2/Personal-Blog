@@ -1,0 +1,81 @@
+﻿@{
+    Layout = "/Views/shared/_layout.cshtml";
+}
+@model IEnumerable<PersonalBlog.Areas.Admin.Models.News>
+<section class="about_area section_gap">
+    <div class="container">
+        <div class="row justify-content-start align-items-center">
+            <section class="services_area" style="padding-bottom:300px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="main_title">
+
+                            </div>
+                        </div>
+                    </div>
+                    @{
+                        /**/
+
+                        int j = 0;
+                    }
+                    @foreach (var item in Model)
+                    {
+
+                        <div class="clearfix">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @if (item.PublishingDate != null)
+                                    {
+
+                                        DateTime a = Convert.ToDateTime(item.PublishingDate);
+                                        string year = a.ToString("MMMM");
+                                        string day = a.ToString("dd");
+                                    <p>
+                                        <h3>@Convert.ToDateTime(item.PublishingDate).Year</h3>
+                                        @year
+                                        @day
+                                    </p>
+                                    }
+                                    <h3>@item.Title</h3>
+                                    <p style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:2;">
+                                        @item.shortDetail
+                                    </p>
+                                    <a href="@Url.Action("Details","news",new {Area="Admin", id = item.Id })">Read More</a>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <br />
+
+                    }
+                    @*if (j % 2 == 1)
+            {
+                <div class="clearfix">
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <center><h1>@item.Title</h1></center>
+                        </div>
+                        <div class="col-md-2">
+                            <img class="img2" src="@item.Image" alt="Pineapple" width="170" height="170" style="float:left;">
+                        </div>
+                        <div class="col-md-10">
+
+
+                            <p>
+                                @item.shortDetail
+                                <a href="@Url.Action("Details","news",new {Area="Admin", id = item.Id })">Read More</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+            j++;
+        }*@
+                </div>
+            </section>
+        </div>
+    </div>
+</section>

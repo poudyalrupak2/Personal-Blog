@@ -1,0 +1,163 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="/img/favicon.png" type="image/png">
+    <title>Breed Portfolio - Home</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Content/breed/vendors/jquery-ui-1.11.4/jquery-ui.min.css" />
+    <link rel="stylesheet" href="/Content/breed/css/bootstrap.css">
+    <link rel="stylesheet" href="~/Content/breed/vendors/linericon/style.css">
+    <link rel="stylesheet" href="/Content/breed/css/themify-icons.css">
+    <link rel="stylesheet" href="/Content/breed/vendors/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/Content/breed/vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/Content/breed/vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="/Content/breed/vendors/nice-select/css/nice-select.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="/Content/breed/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100i,300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">
+
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+
+    <link rel="stylesheet" href="/Content/breed/css/style1.css">
+    <style>
+        .nav > li > a:hover, .nav > li > a:focus {
+            text-decoration: none;
+            background-color: #fff;
+        }
+
+        .blog .carousel-indicators {
+            left: 0;
+            top: auto;
+            bottom: -40px;
+        }
+
+            /* The colour of the indicators */
+            .blog .carousel-indicators li {
+                background: #a3a3a3;
+                border-radius: 50%;
+                width: 8px;
+                height: 8px;
+            }
+
+            .blog .carousel-indicators .active {
+                background: #707070;
+            }
+    </style>
+</head>
+
+<body>
+
+    <header class="header_area header_inner_page">
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <a class="navbar-brand logo_h" href="index.html"><img src="/img/logo.png" alt=""></a>
+                    <a class="navbar-brand logo_inner_page" href="index.html"><img src="/img/logo2.png" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav">
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Home",new {Area="" })">Home</a></li>
+                            <li class="nav-item "><a class="nav-link" href="@Url.Action("Index","About")">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Portfolio")">Portfolio</a></li>
+
+                            <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                                   aria-expanded="false">Blog</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Blog")">Blog</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Contact")">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--================ End Header Area =================-->
+    <!--================ Start Banner Area =================-->
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="container">
+                <div class="banner_content text-center">
+                    <h2>&nbsp;</h2>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    @RenderBody();
+    <footer class="footer_area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="footer_top flex-column">
+                        <div class="footer_logo">
+
+                            <div class="d-lg-block d-none">
+
+                            </div>
+                        </div>
+                        <div class="footer_social mt-lg-0 mt-4">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-skype"></i></a>
+                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row footer_bottom justify-content-center">
+                <p class="col-lg-8 col-sm-12 footer-text">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/Content/breed/js/jquery-2.2.4.min.js"></script>
+    <script src="/Content/breed/js/bootstrap.min.js"></script>
+    <script src="/Content/breed/js/popper.js"></script>
+    <script src="/Content/breed/js/stellar.js"></script>
+    <script src="/Content/breed/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+    <script src="/Content/breed/vendors/isotope/isotope-min.js"></script>
+    <script src="/Content/breed/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/Content/breed/js/jquery.ajaxchimp.min.js"></script>
+    <script src="/Content/breed/js/mail-script.js"></script>
+    <!--gmaps Js-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+    <script src="/Content/breed/js/gmaps.min.js"></script>
+    <script src="/Content/breed/js/theme.js"></script>
+    <script>
+
+        $('#blogCarousel').carousel({
+            interval: 5000
+        });
+
+        //$('.navbar-nav a').on('click', function () {
+        //    $('.navbar-nav').find('li.active').removeClass('active');
+        //    $(this).parent('li').addClass('active');
+        //});
+
+        var url = window.location;
+        var element = $('ul.nav a').filter(function () {
+            return this.href == url;
+        }).parent().addClass('active');
+    </script>
+</body>
+

@@ -1,0 +1,244 @@
+﻿@model IEnumerable<PersonalBlog.Areas.Admin.Models.Gallery>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Photon &mdash; Colorlib Website Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300i,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/content/Photograph/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/content/photograph/css/magnific-popup.css">
+    <link rel="stylesheet" href="/content/photograph/css/jquery-ui.css">
+    <link rel="stylesheet" href="/content/photograph/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/content/photograph/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/content/photograph/css/lightgallery.min.css">
+
+    <link rel="stylesheet" href="/content/photograph/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/content/photograph/fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="/content/photograph/css/swiper.css">
+    <link rel="stylesheet" href="/content/photograph/css/aos.css">
+    <link rel="stylesheet" href="/content/photograph/css/style.css">
+    <style>
+        @@media (min-width: 768px) .navbar {
+            border-radius: 4px;
+        }
+
+        .navbar {
+            border-radius: 4px;
+        }
+
+        .navbar {
+            position: relative !important;
+            min-height: 50px !important;
+            margin-bottom: 20px !important;
+            border: 1px solid transparent !important;
+        }
+
+        .navbar {
+            background: transparent !important;
+            padding: 0px !important;
+            width: 100% !important;
+            display: flex !important;
+            align-items: center !important;
+            box-sizing: border-box !important;
+        }
+
+
+        .header_area {
+            position: fixed;
+            width: 100%;
+            z-index: auto;
+            background: transparent;
+        }
+
+        .navbar-collapse {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        @@media (min-width: 768px) .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        @@media (min-width: 768px) .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        .container-fluid > .navbar-collapse, .container-fluid > .navbar-header, .container > .navbar-collapse, .container > .navbar-header {
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        @@media (min-width: 768px) .navbar-collapse.collapse {
+            display: block !important;
+            height: auto !important;
+            padding-bottom: 0;
+            overflow: visible !important;
+        }
+
+        @@media (min-width: 992px).navbar-expand-lg .navbar-collapse {
+            flex-basis: auto;
+        }
+
+        @@media (min-width: 768px) .navbar-collapse {
+            width: auto;
+            border-top: 0;
+            box-shadow: none;
+        }
+
+        body {
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #333;
+        }
+        .navbar-brand {
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div style="width:100%;min-height:20px;">
+        &nbsp;
+
+        <br />
+        <br />    <br />    <br />    <br />    <br />    <br />  
+    </div>
+
+
+    <div class="container-fluid" data-aos="fade" data-aos-delay="500" style="min-height:700px">
+        <div class="swiper-container images-carousel">
+
+            <div class="swiper-wrapper">
+                @foreach (var item in Model)
+                {
+                    <div class="swiper-slide">
+                        <div class="image-wrap">
+                            <div class="image-info">
+                                <h2 class="mb-3">@item.Caption  </h2>
+                                <a href="@Url.Action("Details", "Home", new { id = item.Id })" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                            </div>
+                            @if (item.Imagepath == null)
+                            {
+                                <img src="/news/noimg.png" alt="Image">
+                            }
+                            else
+                            {
+                                <img src="@item.Imagepath" alt="Image">
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+
+    </div>
+    @section Scripts{
+        <script src="/content/photograph/js/jquery-3.3.1.min.js"></script>
+        <script src="/content/photograph/js/jquery-migrate-3.0.1.min.js"></script>
+        <script src="/content/photograph/js/jquery-ui.js"></script>
+        <script src="/content/photograph/js/popper.min.js"></script>
+        <script src="/content/photograph/js/bootstrap.min.js"></script>
+        <script src="/content/photograph/js/owl.carousel.min.js"></script>
+        <script src="/content/photograph/js/jquery.stellar.min.js"></script>
+        <script src="/content/photograph/js/jquery.countdown.min.js"></script>
+        <script src="/content/photograph/js/jquery.magnific-popup.min.js"></script>
+        <script src="/content/photograph/js/bootstrap-datepicker.min.js"></script>
+        <script src="/content/photograph/js/swiper.min.js"></script>
+        <script src="/content/photograph/js/aos.js"></script>
+        <script src="/content/photograph/js/aos.js"></script>
+        <script src="/content/photograph/js/picturefill.min.js"></script>
+        <script src="/content/photograph/js/lightgallery-all.min.js"></script>
+        <script src="/content/photograph/js/jquery.mousewheel.min.js"></script>
+        <script src="/content/photograph/js/main.js"></script>
+
+
+        <script>
+            $(document).ready(function () {
+                $('#lightgallery').lightGallery();
+            });
+        </script>
+    }
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="cbp-panel">
+        <div id="js-grid-mosaic" class="cbp">
+            @{ int i = 0; }
+            @foreach (var image in Model.Images)
+            {
+
+                <div class="cbp-item print motion" style="width: 300px; left: 337px; top: 0px;">
+                    <a class="cbp-caption fancybox-media" data-rel="portfolio" href="@image.FilePath" data-title-id='title-i'>
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="@image.FilePath" alt="" height="170" width="170" />
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignCenter">
+                                <div class="cbp-l-caption-body">
+                                    <div class="cbp-l-caption-title"><span class="cbp-plus"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/.cbp-caption-activeWrap -->
+                    </a>
+                    <div id='title-i' class="hidden">
+                        <h3>@image.Gallery.Caption</h3>
+                    </div>
+                    <!-- /.hidden -->
+                </div>
+
+
+                i++;
+            }
+            <!--/.cbp-item -->
+
+
+        </div>
+    </div>*@
+
