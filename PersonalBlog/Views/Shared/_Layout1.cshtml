@@ -156,8 +156,11 @@
 
         var url = window.location;
         var element = $('ul.nav a').filter(function () {
+            $('ul.nav a').parent().removeClass('active');
             return this.href == url;
         }).parent().addClass('active');
+        var url = window.location;
+       
     </script>
 </body>
 

@@ -166,10 +166,10 @@
             interval: 5000
         });
         var url = window.location;
-        var element = $('ul.menu a').filter(function () {
-            $('ul.menu a').parent().removeClass('current');
+        var element = $('ul.nav a').filter(function () {
+            $('ul.nav a').parent().removeClass('active');
             return this.href == url;
-        }).parent().addClass('current');
+        }).parent().addClass('active');
 
     </script>
     @RenderSection("scripts", false)
