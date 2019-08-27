@@ -114,34 +114,37 @@
         <br />    <br />    <br />    <br />    <br />    <br />  
     </div>
 
+        <div class="container-fluid" data-aos="fade" data-aos-delay="500" style="min-height:700px">
+            <div class="swiper-container images-carousel">
 
-    <div class="container-fluid" data-aos="fade" data-aos-delay="500" style="min-height:700px">
-        <div class="swiper-container images-carousel">
+                <div class="swiper-wrapper">
 
-            <div class="swiper-wrapper">
-                @foreach (var item in Model)
-                {
-                    <div class="swiper-slide">
-                        <div class="image-wrap">
-                            <div class="image-info">
-                                <h2 class="mb-3">@item.Caption  </h2>
-                                <a href="@Url.Action("Details", "Home", new { id = item.Id })" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                    @foreach (var item in Model)
+                    {
+                   
+                            <div class="swiper-slide">
+                                <div class="image-wrap">
+                                    <div class="image-info">
+                                        <h2 class="mb-3">@item.Caption  </h2>
+                                        <a href="@Url.Action("Details", "Home", new { id = item.Id })" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                                    </div>
+                                    @if (item.Imagepath == null)
+                                    {
+                                        <img src="/news/noimg.png" alt="Image">
+                                    }
+                                    else
+                                    {
+                                        <img src="@item.Imagepath" alt="Image">
+                                    }
+                                </div>
                             </div>
-                            @if (item.Imagepath == null)
-                            {
-                                <img src="/news/noimg.png" alt="Image">
-                            }
-                            else
-                            {
-                                <img src="@item.Imagepath" alt="Image">
-                            }
-                        </div>
-                    </div>
-                }
+                        
+                    }
+
+                </div>
             </div>
-
-        </div>
-
+        
+        
     </div>
     @section Scripts{
         <script src="/content/photograph/js/jquery-3.3.1.min.js"></script>

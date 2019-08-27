@@ -34,7 +34,7 @@
     <div class="col-md-3">
         <div class="form-group">
             @Html.LabelFor(model => model.ShortDetail, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.ShortDetail, new { htmlAttributes = new { @class = "form-control",id="inptxt",onkeyup= "return phonenumber()" } })
+            @Html.EditorFor(model => model.ShortDetail, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.ShortDetail, "", new { @class = "text-danger" })
             <span id="error" class="text-danger"></span>
         </div>
@@ -74,21 +74,4 @@
     </div>
 </div>
 }
-<script type="text/javascript">
-    function phonenumber(event)
-    {
-        var inputtxt = document.getElementById("inptxt").value;
-        var phoneno = /^\d{10}$/;
-        if (phoneno.test(inputtxt))
-        {
-            document.getElementById("error").innerHTML = "";
-            return true;
-        }
-        else {
-            document.getElementById("error").innerHTML = "phone number not valid";
-            return false;
-        }
-    }
-
-</script>
 

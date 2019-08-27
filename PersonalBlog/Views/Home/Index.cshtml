@@ -103,11 +103,8 @@
         min-height: 0px;
     }
 </style>
-<br />
-<br />
-<br />
-<br />
-<section class="home_banner_area">
+
+<section class="home_banner_area" style="padding-top:95px;">
     <div class="banner_inner">
         <div class="container-fluid" style="margin-left:-15px;">
 
@@ -192,10 +189,20 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="main_title">
-                    <h2>
-                        News
-                        And Events
-                    </h2>
+                    <h4 style="background-color: #0e5dae!important;padding: 10px 20px;padding-bottom: 0!important; margin-bottom: 25px!important;align-items:center;border-bottom: solid 1px rgba(77,77,77,.2);">
+                        <span style="color:white"> News & Events</span>
+                        <span class="right">
+                           
+                                <span></span>
+                                <span class="dot_wrap">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            
+                        </span>
+                    </h4>
+
                 </div>
             </div>
         </div>
@@ -209,63 +216,51 @@
             if (j % 2 == 0)
             {
                 <div class="clearfix">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <center><h1 style="font-size: 3rem;font-weight: 700;">@item.Title</h1></center>
-
-                        </div>
-
-
-
+                    <div class="row">                      
                         <div class="col-md-10">
-                            <p style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:4;padding: 10px 100px 0;min-height:150px">
+							<center><h3 style="font-size: 3rem;font-weight: 600;">@item.Title</h3></center>
+                            <p style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:4; text-align:center; padding: 15px 50px 0;min-height:150px">
                                 @item.shortDetail
-
                             </p>
                             <center> <a href="@Url.Action("NDetails","Home",new {id = item.Id })"  class="btn-sm btn-info">Read More</a></center>
                         </div>
                         <div class="col-md-2 ">
-                            @if (item.Image != "" && item.Image!=null)
-                            {
-                              
-                                <img src="@item.Image" alt="" width="170" height="170" style="float:right;">
-                            }
-                            else
-                            {
-                                <img src="/news/noimg.png" alt="" style="height:77px;width:70px;">
+                            <center>
+                                @if (item.Image != "" && item.Image != null)
+                                {
 
-                            }
+                                    <img src="@item.Image" alt="" width="170" height="170" style="float:right;padding-top:30px;min-height:150px">
+                                }
+                                else
+                                {
+                                    <img src="/news/noimg.png" alt=""  width="170" height="170" style="float:right;padding-top:30px;min-height:150px">
 
+                                }
+                            </center>
                         </div>
                     </div>
                 </div>
-
             }
             if (j % 2 == 1)
             {
                 <div class="clearfix">
                     <div class="row ">
-                        <div class="col-md-12">
-                            <center><h1 style="font-size: 3rem;font-weight: 700;">@item.Title</h1></center>
-                        </div>
                         <div class="col-md-2">
                             @if (item.Image != "" && item.Image != null)
                             {
 
-                                <img src="@item.Image" alt="" width="170" height="170" style="float:right;">
+                                <img src="@item.Image" alt="" width="170" height="170" style="float:left;padding-top:30px;min-height:150px">
                             }
                             else
                             {
-                                <img src="/news/noimg.png" alt="" style="height:77px;width:70px;">
+                                <img src="/news/noimg.png" alt=""  width="170" height="170" style="float:left;padding-top:30px;min-height:150px">
 
                             }
                         </div>
                         <div class="col-md-10">
-
-
-                            <p style="overflow:hidden;text-overflow: ellipsis;display:-webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:4;padding: 10px 100px 0;min-height:150px">
+							 <center><h3 style="font-size: 3rem;font-weight: 600;">@item.Title</h3></center>
+                            <p style="overflow:hidden;text-overflow: ellipsis;display:-webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:4; text-align:center; padding: 15px 50px 0;min-height:150px">
                                 @item.shortDetail
-
                             </p>
                             <center> <a href="@Url.Action("NDetails","Home",new { id = item.Id })" class="btn-sm btn-info">Read More</a></center>
                         </div>
@@ -279,11 +274,21 @@
 <section class="services_area" style="padding-bottom:20px">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-12">
                 <div class="main_title">
-                    <h2>
-                      Sports News
-                    </h2>
+                    <h4 style="background-color: #0e5dae!important;padding: 10px 20px;padding-bottom: 0!important; margin-bottom: 25px!important;align-items:center;border-bottom: solid 1px rgba(77,77,77,.2);">
+                        <span style="color:white"> Sports News</span>
+                        <span class="right">
+                           
+                                <span></span>
+                                <span class="dot_wrap">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                          
+                        </span>
+                    </h4>
                 </div>
             </div>
         </div>
@@ -297,23 +302,26 @@
             if (k % 2 == 0)
             {
                 <div class="clearfix">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <center><h1 style="font-size: 3rem;font-weight: 700;">@item.Title</h1></center>
-
-                        </div>
-
-
-
+                    <div class="row">                       
                         <div class="col-md-10">
-                            <p style="overflow:hidden;text-overflow: ellipsis;display:-webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:4;padding: 10px 100px 0;min-height:150px">
+							<center><h3 style="font-size: 3rem;font-weight: 600;">@item.Title</h3></center>
+                            <p style="overflow:hidden;text-overflow: ellipsis;display:-webkit-box;-webkit-box-orient: vertical; text-align:center; -webkit-line-clamp:4;padding: 15px 50px 0;min-height:150px">
                                 @item.shortDetail
 
                             </p>
                             <center> <a href="@Url.Action("NDetails","Home",new { id = item.Id })" class="btn-sm btn-info">Read More</a></center>
                         </div>
                         <div class="col-md-2 ">
-                            <img class="img2" src="@item.Image" width="170" height="170" style="float:right;">
+                            @if (item.Image != "" && item.Image != null)
+                            {
+
+                                <img src="@item.Image" alt="" width="170" height="170" style="float:right;padding-top:30px;min-height:150px">
+                            }
+                            else
+                            {
+                                <img src="/news/noimg.png" alt="" width="170" height="170" style="float:right;padding-top:30px;min-height:150px">
+
+                            }
                         </div>
                     </div>
                 </div>
@@ -322,21 +330,26 @@
             if (k % 2 == 1)
             {
                 <div class="clearfix">
-                    <div class="row ">
-                        <div class="col-md-12">
-                            <center><h1 style="font-size: 3rem;font-weight: 700;">@item.Title</h1></center>
-                        </div>
+                    <div class="row ">                       
                         <div class="col-md-2">
-                            <img class="img2" src="@item.Image" alt="Pineapple" width="170" height="170" style="float:left;">
+                            @if (item.Image != "" && item.Image != null)
+                            {
+
+                                <img src="@item.Image" alt="" width="170" height="170" style="float:left;padding-top:30px;min-height:150px">
+                            }
+                            else
+                            {
+                                <img src="/news/noimg.png" alt="" width="170" height="170" style="float:left;padding-top:30px;min-height:150px">
+
+                            }
                         </div>
                         <div class="col-md-10">
-
-
-                            <p>
+							<center><h1 style="font-size: 3rem;font-weight: 600;">@item.Title</h1></center>
                             <p style="overflow:hidden;text-overflow: ellipsis;display:-webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:4;padding: 10px 100px 0;min-height:150px">
                                 @item.shortDetail
 
                             </p>
+							<p>
                             <center><a href="@Url.Action("NDetails","Home",new {id = item.Id })" class="btn-sm btn-info">Read More</a></center>
                             </p>
                         </div>
@@ -357,9 +370,19 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="main_title">
-                    <h2>
-                        My History
-                    </h2>
+                    <h4 style="background-color: #0e5dae!important;padding: 10px 20px;padding-bottom: 0!important; margin-bottom: 25px!important;align-items:center;border-bottom: solid 1px rgba(77,77,77,.2);">
+                        <span style="color:white">My History</span>
+                        <span class="right">
+                           
+                                <span></span>
+                                <span class="dot_wrap">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            
+                        </span>
+                    </h4>
                 </div>
             </div>
         </div>
@@ -385,7 +408,7 @@
 
                             @if (item.Image != null && item.Image != null)
                             {
-                                <img class="rounded-circle" src="@item.Image" alt="Pineapple" width="50" height="50">
+                                <img class="rounded-circle" src="@item.Image" width="50" height="50">
 
                             }
                             else
@@ -395,7 +418,7 @@
                             }
 
                         </center>
-                        <h2>Title</h2>
+                        <h4>@item.Title</h4>
                         <div class="date">@item.Date</div>
                         <p style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:3;">@item.Description</p>
                         <a class="bnt-more" href="@Url.Action("detail","Home",new {id=item.Id })">More</a>
@@ -408,7 +431,7 @@
 
 
                         <center><img class="rounded-circle" src="@item.Image" alt="Pineapple" width="50" height="50"></center>
-                        <h2>Title</h2>
+                        <h4>@item.Title</h4>
                         <div class="date">@item.Date</div>
                         <p style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical; -webkit-line-clamp:3;">@item.Description</p>
                         <a class="bnt-more" href="@Url.Action("detail","Home",new {id=item.Id })">More</a>
@@ -418,201 +441,95 @@
             </div>
             i++;
         }
-
-
-
-        @*<div class="timeline-item">
-
-                <div class="timeline-img"></div>
-
-                <div class="timeline-content js--fadeInLeft">
-                    <div class="date">3 JUN 2016</div>
-                    <h2>Quote</h2>
-                    <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta explicabo debitis omnis dolor iste fugit totam quasi inventore!</blockquote>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-
-                <div class="timeline-img"></div>
-
-                <div class="timeline-content js--fadeInRight">
-                    <h2>Title</h2>
-                    <div class="date">22 JUN 2016</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
-                    <a class="bnt-more" href="javascript:void(0)">More</a>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-
-                <div class="timeline-img"></div>
-
-                <div class="timeline-content timeline-card js--fadeInLeft">
-                    <div class="timeline-img-header">
-                        <h2>Card Title</h2>
-                    </div>
-                    <div class="date">10 JULY 2016</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
-                    <a class="bnt-more" href="javascript:void(0)">More</a>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-
-                <div class="timeline-img"></div>
-
-                <div class="timeline-content timeline-card js--fadeInRight">
-                    <div class="timeline-img-header">
-                        <h2>Card Title</h2>
-                    </div>
-                    <div class="date">30 JULY 2016</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
-                    <a class="bnt-more" href="javascript:void(0)">More</a>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-
-                <div class="timeline-img"></div>
-
-                <div class="timeline-content js--fadeInLeft">
-                    <div class="date">5 AUG 2016</div>
-                    <h2>Quote</h2>
-                    <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta explicabo debitis omnis dolor iste fugit totam quasi inventore!</blockquote>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-
-                <div class="timeline-img"></div>
-
-                <div class="timeline-content timeline-card js--fadeInRight">
-                    <div class="timeline-img-header">
-                        <h2>Card Title</h2>
-                    </div>
-                    <div class="date">19 AUG 2016</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
-                    <a class="bnt-more" href="javascript:void(0)">More</a>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-
-                <div class="timeline-img"></div>
-
-                <div class="timeline-content js--fadeInLeft">
-                    <div class="date">1 SEP 2016</div>
-                    <h2>Title</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
-                    <a class="bnt-more" href="javascript:void(0)">More</a>
-                </div>
-            </div>*@
-
-
-
     </div>
 </section>
-<div class="row">
-    <div class="col-md-8">
 <section class="services_area" style="padding-top:20px;">
-
     <div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="col-md-12">
+                    <div class="main_title">
+                        <h4 style="background-color: #0e5dae!important;padding: 10px 20px;padding-bottom: 0!important; margin-bottom: 25px!important;align-items:center;border-bottom: solid 1px rgba(77,77,77,.2);">
+                            <span style="color:white"> My Achievement And Award</span>
+                            <span class="right">
 
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="main_title">
-                    <h2>
-                        My
-                        Achievement And Award
-                    </h2>
-                </div>
-            </div>
-        </div>
-        <div class="row blog">
-            <div class="col-md-12">
-                <div id="blogCarousel" class="carousel slide">
-
-                    <ol class="carousel-indicators">
-                        <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#blogCarousel" data-slide-to="1"></li>
-                    </ol>
-
-                    <!-- Carousel items -->
-                    <div class="carousel-inner">
-
-                        <div class="carousel-item active">
-
-
-
-
-
-                            <div class="row">
-
-                                @foreach (var item in Model.Acheivement)
-                                {
-                                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                                        <div class="service_item">
-                                            @if (item.Image != "" && item.Image != null)
-                                            {
-                                                <img src="@item.Image" alt="" style="height:77px;width:70px;">
-                                            }
-                                            else
-                                            {
-                                                <img src="/news/noimg.png" alt="" style="height:77px;width:70px;">
-                                                
-                                            }
-                                            <h4>@item.Title</h4>
-
-                                           
-                                        </div>
-                                    </div>
-                                }
-
-
-                               
-
-                            </div>
-                        </div>
+                                <span></span>
+                                <span class="dot_wrap">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                                
+                            </span>
+                        </h4>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
+				</div>
+				<div class="blog">
+					<div class="col-md-12">
+						<div id="blogCarousel" class="carousel slide">
+						
+							<!-- Carousel items -->
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<div class="row">
+										@foreach (var item in Model.Acheivement)
+										{
+											<div class="col-lg-4 col-md-6 mb-4 md-lg-0">
+													<div class="service_item">
+														@if (item.Image != "" && item.Image != null)
+														{
+															<img src="@item.Image" alt="" style="height:77px;width:70px;">
+														}
+														else
+														{
+															<img src="/news/noimg.png" alt="" style="height:77px;width:70px;">
+															
+														}
+														<h4>@item.Title</h4>
+													</div>
+											</div>
+										}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> 
+				<div class="col-md-12">
+                    <div class="main_title">
+                        <h4 style="background-color: #0e5dae!important;padding: 10px 20px;padding-bottom: 0!important; margin-bottom: 25px!important;align-items:center;border-bottom: solid 1px rgba(77,77,77,.2);">
+                            <span style="color:white"> Check Our Gallery</span>
+                            <span class="right">
 
-</section>
-<section class="portfolio_area" id="portfolio" style="padding-bottom:20px">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="main_title">
-                    <h2>
-                        Check Our Gallery <br>
-                    </h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            @foreach (var item in Model.galleries)
-            {
-
-                <div class="col-md-3 all latest popular upcoming">
-                    <div class="single_portfolio">
-                        <a href="gallery1.html">	<img class="img-fluid w-100" src="@item.Imagepath" style="height:275px;width:525px;"></a>
-                        <div class="overlay"></div>
-                        <div class="short_info">
-                            <h4><a href="@Url.Action("Details","Home",new {id=item.Id })">@item.Caption</a></h4>
-                        </div>
+                                <span></span>
+                                <span class="dot_wrap">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                                </a>
+                            </span>
+                        </h4>
                     </div>
-                </div>
-            }
-        </div>
-
-    </div>
+				</div>	
+				<div class="col-md-12">
+					@foreach (var item in Model.galleries)
+					{
+						<div class="col-md-4 all latest popular upcoming">
+							<div class="single_portfolio">
+								<a href="gallery1.html">	<img class="img-fluid w-100" src="@item.Imagepath" style="height:210px;width:425px;"></a>
+								<div class="overlay"></div>
+								<div class="short_info">
+									<h4><a href="@Url.Action("Details","Home",new {id=item.Id })">@item.Caption</a></h4>
+								</div>
+							</div>
+						</div>
+					}
+				</div>					
+			</div>
+			<div class="col-md-4" style="padding-top:10px;">
+				<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FPitamberTimsina.info.np%2F&tabs=timeline&width=340&height=1000&small_header=false&adapt_container_width=false&hide_cover=true&show_facepile=true&appId=342183715959961" width="340" height="1000 " style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+			</div>
+		</div>
+	</div>
 </section>
-</div>
-    <div class="col-md-3" style="padding-top:100px;margin-right:10px;padding-right:20px;">
-        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FPitamberTimsina.info.np%2F&tabs=timeline&width=340&height=800&small_header=false&adapt_container_width=false&hide_cover=true&show_facepile=true&appId=342183715959961" width="340" height="800 " style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-
-    </div>
-</div>

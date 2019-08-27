@@ -138,6 +138,7 @@
     <Compile Include="Areas\Admin\Controllers\AchievementsController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\GalleriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\HistoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
@@ -2079,6 +2080,7 @@
     <Content Include="Content\Photograph\scss\_site-navbar.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\datatables\41697237_320584561833132_7767211367110541312_n.jpg" />
@@ -2225,6 +2227,13 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="transliteration\base.js" />
+    <Content Include="transliteration\carsan.js" />
+    <Content Include="transliteration\clipboard.js" />
+    <Content Include="transliteration\jsapi.js" />
+    <Content Include="transliteration\transliteration.css" />
+    <Content Include="transliteration\transliteration.I.js" />
+    <Content Include="transliteration\transliteration.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2251,6 +2260,7 @@
     <Content Include="Views\Home\NDetails.cshtml" />
     <Content Include="Views\Home\Gallery.cshtml" />
     <Content Include="Views\Portfolio\SagNews.cshtml" />
+    <Content Include="Views\Blog\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

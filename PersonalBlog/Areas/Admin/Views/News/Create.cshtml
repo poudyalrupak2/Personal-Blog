@@ -1,79 +1,117 @@
 ﻿@model PersonalBlog.Areas.Admin.Models.News
 @using PersonalBlog.Helpers
 @{
-    ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+                /**/
+
+                ViewBag.Title = "Create";
+                Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+<script src="/Transliteration/jsapi.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+    // Load the Google Transliterate API
+    google.load("elements", "1", {
+        packages: "transliteration"
+    });
+
+    function onLoad() {
+        var options = {
+            sourceLanguage:
+                google.elements.transliteration.LanguageCode.ENGLISH,
+            destinationLanguage:
+                [google.elements.transliteration.LanguageCode.NEPALI],
+            shortcutKey: 'ctrl+g',
+            transliterationEnabled: true
+        };
+
+        // Create an instance on TransliterationControl with the required
+        // options.
+        var control =
+            new google.elements.transliteration.TransliterationControl(options);
+
+        // Enable transliteration in the textbox with id
+        // 'transliterateTextarea'.
+        control.makeTransliteratable(["ContentPlaceHolder1_txtTitle"]);
+        control.makeTransliteratable(["short"]);
+        control.makeTransliteratable(["cke_LongDescription"]);
+    }
+    google.setOnLoadCallback(onLoad);
+</script>
+<script src="/Transliteration/transliteration.js" type="text/javascript"></script>
+<link href="/Transliteration/transliteration.css" rel="stylesheet" />
+<script src="/Transliteration/transliteration.I.js" type="text/javascript"></script>
+
 
 
 @using (Html.BeginForm("Create", "News", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
+    <label>Ctrl+g for unicode</label>
+    <div class="form-row">
 
-<div class="form-row">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
+                @Html.TextBoxFor(model => model.Title, new { @class = "form-control", id = "ContentPlaceHolder1_txtTitle" })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="col-md-4">
+
+
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <label class="control-label ">Publishing Date</label>
+
+
+                @Html.TextBoxFor(model => model.PublishingDate, new { @class = "form-control", id = "datepicker", @type = "date" })
+                @Html.ValidationMessageFor(model => model.PublishingDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-4">
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Category, new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(m => m.Category, new SelectList(new List<SelectListItem> { new SelectListItem() { Text = "Select Category", Value = "" }, new SelectListItem() { Text = "News", Value = "news" }, new SelectListItem() { Text = "Event", Value = "event" }, new SelectListItem() { Text = "SportNews", Value = "SportNews" }, new SelectListItem() { Text = "SAG Game", Value = "SAGGame" } }, "Value", "Text"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PublishingDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Image, new { @class = "control-label col-md-2" })
+                <input type="file" name="AImage" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="control-label col-md-2">Short Detail</label>
+                @Html.TextAreaFor(model => model.shortDetail, new { @class = "form-control", id = "short" })
+
+                @Html.ValidationMessageFor(model => model.shortDetail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <br />
+        <label class="control-label col-md-2">Long Description</label>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                @Html.CkeditorFor(m => m.LongDescription, new { id = "raju" })
+                @Html.ValidationMessageFor(model => model.LongDescription, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
         <div class="form-group">
-            @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
-            @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                @Html.ActionLink("Back to List", "Index", "null", new { @class = "btn btn-primary" })
+
+            </div>
         </div>
     </div>
-
-
-
-    <div class="col-md-4">
-
-        <div class="form-group">
-            <label class="control-label ">Publishing Date</label>
-
-            @Html.TextBoxFor(model => model.PublishingDate, new { @class = "form-control", id = "datepicker", @type = "date" })
-            @Html.ValidationMessageFor(model => model.PublishingDate, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="col-md-4">
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Category, new { @class = "control-label col-md-2" })
-            @Html.DropDownListFor(m => m.Category, new SelectList(new List<object> { new { Text = "Select Category", value = "" }, new { Text = "News", value = "news" }, new { Text = "Event", value = "event" }, new { Text = "SportNews", value = "SportNews" }, new { Text = "SAG Game", value = "SAGGame" } }, "value", "Text"), new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.PublishingDate, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="form-group">
-            @Html.LabelFor(model => model.Image, new { @class = "control-label col-md-2" })
-            <input type="file" name="AImage" class="form-control" />
-            @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="col-md-12">
-        <div class="form-group">
-            <label class="control-label col-md-2">Short Detail</label>
-            @Html.TextAreaFor(model => model.shortDetail, new { @class = "form-control" })
-
-            @Html.ValidationMessageFor(model => model.shortDetail, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <br />
-    <label class="control-label col-md-2">Long Description</label>
-
-    <div class="col-md-12">
-        <div class="form-group">
-            @Html.CkeditorFor(m => m.LongDescription)
-            @Html.ValidationMessageFor(model => model.LongDescription, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-primary" />
-            @Html.ActionLink("Back to List", "Index", "null", new { @class = "btn btn-primary" })
-
-        </div>
-    </div>
-</div>
 }
 
 

@@ -44,6 +44,7 @@ namespace PersonalBlog.Areas.Admin.Controllers
         // GET: Admin/News/Create
         public ActionResult Create()
         {
+       
             return View();
         }
 
@@ -167,9 +168,22 @@ namespace PersonalBlog.Areas.Admin.Controllers
                     news.Image = imagename;
                 }
                
-               news.updatedBy = Session["userEmail"].ToString();
+                 news.updatedBy = Session["userEmail"].ToString();
                 news.UpdatedAt = DateTime.Now.ToShortDateString();
-                db.Entry(news).State = EntityState.Modified;
+                News a = db.News.Find(news.Id);
+                a.Image = news.Image;
+                a.LongDescription = news.LongDescription;
+                a.shortDetail = news.shortDetail;
+                a.PublishingDate = news.PublishingDate;
+                a.UpdatedAt = news.UpdatedAt;
+                a.updatedBy = news.updatedBy;
+                a.UplodedAt = news.UplodedAt;
+                a.UplodedBy = news.UplodedBy;
+                a.Title = news.Title;
+                a.Category = news.Category;
+                a.Id = news.Id;
+
+               
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

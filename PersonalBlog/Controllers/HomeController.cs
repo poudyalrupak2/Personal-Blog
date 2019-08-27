@@ -3,6 +3,8 @@ using PersonalBlog.Areas.Data;
 using PersonalBlog.Models.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -22,18 +24,14 @@ namespace PersonalBlog.Controllers
             indexs.news = db.News.Where(m=>m.Category!= "SportNews" && m.PublishingDate<DateTime.Now).Take(5).OrderByDescending(m=>m.Id).ToList();
             indexs.SportNews = db.News.Where(m => m.Category == "SportNews" && m.PublishingDate < DateTime.Now).Take(5).OrderByDescending(m => m.Id).ToList();
             indexs.Acheivement = db.Achievements.OrderByDescending(m => m.Id).Take(5).ToList();
-            indexs.galleries = db.Gallery.ToList();
+            indexs.galleries = db.Gallery.Take(6).OrderByDescending(m=>m.Id).ToList();
             indexs.histories = db.Histories.OrderByDescending(m => m.Id).ToList();
             return View(indexs);
         }
         public ActionResult Details (int id)
         {
-            Gallery gal = new Gallery();
-            gal = db.Gallery.Find(id);
-            List<Images> im = new List<Images>();
-            im = db.Images.Where(m => m.Gallery.Id == id).ToList();
-            gal.Images = im;
-
+            Gallery gal = db.Gallery.Where(m=>m.Id==id).Include(Gallery =>Gallery.Images).FirstOrDefault();
+         
             return View(gal);
         }
 
@@ -81,7 +79,7 @@ namespace PersonalBlog.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Contact(string fname,string email,string subject, string country)
+        public ActionResult Contact(string fname,string email,string subject)
         {
             return View();
             //var message = new MailMessage();

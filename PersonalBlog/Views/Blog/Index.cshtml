@@ -25,24 +25,32 @@
                         <div class="clearfix">
                             <div class="row">
                                 <div class="col-md-12">
+                                    <div class="col-md-3">
                                     @if (item.PublishingDate != null)
                                     {
 
                                         DateTime a = Convert.ToDateTime(item.PublishingDate);
+                                        string d = (a.Day % 10 == 1 && a.Day != 11) ? "st"
+                                      : (a.Day % 10 == 2 && a.Day != 12) ? "nd"
+                                         : (a.Day % 10 == 3 && a.Day != 13) ? "rd"
+                                        : "th";
                                         string year = a.ToString("MMMM");
                                         string day = a.ToString("dd");
                                     <p>
-                                        <h3>@Convert.ToDateTime(item.PublishingDate).Year</h3>
-                                        @year
-                                        @day
+                                        @day<sup>@d</sup>  @year
+                                        <h6>@Convert.ToDateTime(item.PublishingDate).Year</h6>
+
+
                                     </p>
                                     }
+                                    </div>
                                     <h3>@item.Title</h3>
                                     <p style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:2;">
                                         @item.shortDetail
-                                    </p>
-                                    <a href="@Url.Action("Details","news",new {Area="Admin", id = item.Id })">Read More</a>
+                                        
 
+                                    </p>
+                                    <a href="@Url.Action("Details","Blog",new { id = item.Id })">Read More</a>
 
                                 </div>
 

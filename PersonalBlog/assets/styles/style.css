@@ -1278,7 +1278,7 @@ Version 1.0
 }
 .navigation .menu a.active,
 .navigation .menu a.current {
-  color: #304ffe;
+    color: #85d0f3;
 }
 .navigation .menu a i {
   color: #212121;
@@ -1329,10 +1329,10 @@ Version 1.0
   -o-transform: rotate(-180deg);
   -ms-transform: rotate(-180deg);
 }
-.navigation .menu > li.current > a {
-  background: #304ffe;
-  color: #ffffff;
-}
+    .navigation .menu > li.current > a {
+        background: #85d0f3;
+        color: #ffffff;
+    }
 .navigation .menu > li.current > a > i {
   color: #ffffff;
 }

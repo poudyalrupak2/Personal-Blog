@@ -18,7 +18,10 @@
             </th>
 
             <th>
-                @Html.DisplayNameFor(model => model.PublishingDate)
+               Publishing Date
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
             </th>
             <th></th>
         </tr>
@@ -26,21 +29,24 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
 
-                <td>
-                    @item.PublishingDate.ToString("dd/MM/yyyy")
-                </td>
+            <td>
+                @item.PublishingDate.ToString("dd/MM/yyyy")
+            </td>
+            <td>
+               @item.Category
+            </td>
 
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info" }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
-                </td>
-            </tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn-sm btn-primary" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn-sm btn-info" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn-sm btn-danger" })
+            </td>
+        </tr>
         }
     </tbody>
 </table>
@@ -77,7 +83,7 @@
                             $("#mytable").DataTable({
                                 "columnDefs": [
                                     {
-                                        "orderable": false, "targets": [2],
+                                        "orderable": false, "targets": [3],
 
 
                                     }

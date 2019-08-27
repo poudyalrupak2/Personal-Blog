@@ -66,6 +66,7 @@ namespace PersonalBlog.Areas.Admin.Controllers
                     try
                     {
                         name = db.Gallery.OrderByDescending(m => m.Id).FirstOrDefault().Id;
+                    name = name + 1;
                     }
                     catch
                     {
@@ -116,6 +117,7 @@ namespace PersonalBlog.Areas.Admin.Controllers
                             try
                             {
                                 name = db.Gallery.OrderByDescending(m => m.Id).FirstOrDefault().Id;
+                            name = name + 1;
                             }
                             catch
                             {
@@ -177,8 +179,11 @@ namespace PersonalBlog.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit( Gallery gallery, HttpPostedFileBase Thumbnail, List<HttpPostedFileBase> Images)
         {
-            if (ModelState.IsValid)
-            {
+       
+
+
+
+
                 if (Thumbnail != null && Thumbnail.ContentLength > 0)
                 {
                     var fileName = Path.GetFileName(Thumbnail.FileName);
@@ -217,10 +222,26 @@ namespace PersonalBlog.Areas.Admin.Controllers
                     Thumbnail.SaveAs(path);
                     gallery.Imagepath = "/Gallery/" + name + "/Thumbnail/" + fileName1 + ext;
                 }
-                List<Images> im = new List<Images>();
+            var model = db.Gallery.Include(t => t.Images).SingleOrDefault(x => x.Id == gallery.Id);
+            List<Images> im = new List<Images>();
                 if (Images.Count > 0)
                 {
-                    foreach (var images in Images)
+                if (Images.Any(m => m.ContentLength > 0))
+                {
+                    foreach (var images in model.Images)
+                    {
+                        string imagepath = images.FilePath.ToString();
+                        var fileName =Server.MapPath(imagepath);
+                        if(System.IO.File.Exists(fileName))
+                           {
+                            System.IO.File.Delete(fileName);
+                        }
+                        db.Database.ExecuteSqlCommand("delete from Images where FilePath='" + fileName + "'");
+
+                    }
+                }
+               }
+            foreach (var images in Images)
                     {
                         if (images != null)
                         {
@@ -256,17 +277,31 @@ namespace PersonalBlog.Areas.Admin.Controllers
                                 Images img = new Images();
                                 img.FilePath = "/Gallery/" + name + "/" + fileName1 + ext;
                                 img.Name = images.FileName;
+                            images.SaveAs(path);
+
+                        Images image = new Images()
+                        {
+                            FilePath = "/Gallery/" + name + "/" + fileName1 + ext,
+                            Name=fileName1,
+                            
+
+                        };
+                      
+                        im.Add(image);
                             }
-                        }
+                        
 
                     }
                 }
-              
-                db.Entry(gallery).State = EntityState.Modified;
+                 gallery.Images = im;
+            Gallery gal = db.Gallery.Where(m => m.Id == gallery.Id).FirstOrDefault();
+            gal.Name = gallery.Name;
+            gal.Images = gallery.Images;
+            gal.Imagepath = gallery.Imagepath;
+            gal.Caption = gallery.Caption;
                 db.SaveChanges();
                 return RedirectToAction("Index");
-            }
-            return View(gallery);
+
         }
 
         // GET: Admin/Galleries/Delete/5
@@ -277,6 +312,7 @@ namespace PersonalBlog.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Gallery gallery = db.Gallery.Find(id);
+            
             if (gallery == null)
             {
                 return HttpNotFound();
@@ -290,8 +326,21 @@ namespace PersonalBlog.Areas.Admin.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Gallery gallery = db.Gallery.Find(id);
-            
-            db.Gallery.Remove(gallery);
+            List<Images> im = new List<Images>();
+            var model = db.Gallery.Include(t => t.Images).SingleOrDefault(x => x.Id == gallery.Id);
+            foreach (var images in model.Images)
+            {
+                string imagepath = images.FilePath.ToString();
+                var fileName = Server.MapPath(imagepath);
+                if (System.IO.File.Exists(fileName))
+                {
+                    System.IO.File.Delete(fileName);
+                }
+                db.Database.ExecuteSqlCommand("delete from Images where FilePath='" + fileName + "'");
+
+            }
+            db.Gallery.Remove(model);
+
             db.SaveChanges();
             return RedirectToAction("Index");
         }
